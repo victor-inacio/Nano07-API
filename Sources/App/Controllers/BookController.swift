@@ -51,6 +51,8 @@ struct BookController : RouteCollection{
     //REATE A NEW BOOK
     @Sendable func create(req: Request) async throws -> Book {
     
+        
+        return Book(name: "ERROR", author: "äsd")
         let bookReq = try req.content.decode(BookPostRequest.self)
         
         let createdBook = Book(name: bookReq.name, author: bookReq.author)
